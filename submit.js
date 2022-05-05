@@ -1,11 +1,13 @@
- $('#submitCard_'+card_id_pop).on('submit', function (e) {
+      $('#submitCard_'+card_id_pop).on('submit', function (e) {
             e.preventDefault();
-            var task_id = $('input[name*="task_id"]').val();
-            var folder_name = $('input[name*="folder_name"]').val();
+            var targetIdPop = $(this).attr('id');
+            var cardIdPop = targetIdPop.replace(/[^0-9]/g,"");
+            var task_id_card = $('#card_id_'+cardIdPop).val();
+            var folder_name = $('#folder_name_card'+cardIdPop).val();
 
             var fd = new FormData();
             fd.append('file', $("#js-file_"+card_id_pop)[0].files[0]);
-            fd.append('task_id',task_id);
+            fd.append('task_id',task_id_card);
             fd.append('folder_name',folder_name);
 
             $.ajax({
