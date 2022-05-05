@@ -3,7 +3,7 @@
             var targetIdPop = $(this).attr('id');
             var cardIdPop = targetIdPop.replace(/[^0-9]/g,"");
             var task_id_card = $('#card_id_'+cardIdPop).val();
-            var folder_name = $('#folder_name_card'+cardIdPop).val();
+            var folder_name = $('#folder_name_card_'+cardIdPop).val();
 
             var fd = new FormData();
             fd.append('file', $("#js-file_"+card_id_pop)[0].files[0]);
